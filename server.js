@@ -36,8 +36,8 @@ function callApi() {
 	    	data = {};
 	    	data.department = e.department
 	    	data.amount = parseInt(e.amount)  	
-	    	data.month_and_year = e.month_and_year
-
+	    	// data.month_and_year = e.month_and_year
+			data.month_and_year = new Date(e.month_and_year).getTime(),                    
 	    	data_values = new Array();
 	    	for (var key in data)
 	    		data_values.push(data[key]);

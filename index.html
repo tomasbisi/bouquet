@@ -3,84 +3,32 @@
 <head>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<!-- <script type="text/javascript" src="jquery.monthpicker.min.js"></script> -->
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script>
-	// $(document).ready(function() {
-	//     $('#monthpicker').monthpicker({
-	//     	'lang' : 'es',
-	//     	'years' : [2017],
-	//     	'month' : ['Jan.','Feb.','Mär.','Apr.','Mai','Jun.','Jul.','Aug.','Sep.','Ok.','Nov.','Dez.']
-	//     });
-	// });
+
+	
+	// function saveDateTimes (){
+ //        var temp = document.getElementById('date').value;
+ //        var paramDate = new Date(temp).getTime();
+ //        ChartBuild(paramDate);
+ //        console.log(paramDate);
+ //    }
+    
 </script> 
 </head>
 <body>
-	<!-- <style>
-	body {
-		background-color: #eee;
-	}
-	.container > div {
-		padding: 2em;
-	}
-	.storageChart  {
-		padding-right: 2em;
-		background-color: #fff;
-		width: 700px;
-		margin-left: 20%;
-		margin-top: 3%;
-	}
-	.lowerCharts {
-		display: flex;
-	}
-	.lowerCharts > div {
-		padding-right: 2em;
-		padding-left: 1em;
-		padding-top: 1em;
-		padding-bottom: 2em;
-		background-color: #fff;
-	}
-	.numChart {
-		margin-left: 18.5%;
-		margin-right: 5.7%;
-	}
-	</style> -->
+
 		<div id="dates">
 			<input id="date" type="date" min="2016-01-01" max="2017-12-31" required>
-    		<input type="submit">
+    <!-- 		<input type="submit" onclick="saveDateTimes()"> -->
   		</div>
-	<div class="container">
-		
-		<div class="lowerCharts">
-			<div id="container" style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+
+		<div class="container">		
+			<div class="lowerCharts">
+				<div id="container" style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+			</div>		
 		</div>
-		
-
-	</div>
-		
-		
-		<!-- <div class="months">
-			<input type="text" id="monthpicker">
-			 <select>
-			      <option>Jan</option>
-			      <option>Feb</option>
-			      <option>Mar</option>
-			      <option>Apr</option>
-			      <option>May</option>
-			      <option>Jun</option>
-			      <option>Jul</option>
-			      <option>Aug</option>
-			      <option>Sep</option>
-			      <option>Oct</option>
-			      <option>Nov</option>
-			      <option>Dec</option>
-    </select>
-		</div> -->
-		</form>
-
-
-
 
 	<script src=script.js></script>
 
