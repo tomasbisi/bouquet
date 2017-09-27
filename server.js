@@ -1,5 +1,5 @@
 var express = require('express');
-var http = require('http');
+var https = require('https');
 var app = express();
 var path = require('path');
 // const jsdom = require("jsdom");
@@ -26,3 +26,22 @@ app.get('/', function(req, res) {
 
 app.listen(8080);
 console.log("Listening on Port 8080");
+
+function callApi() {
+	
+const url =
+  "https://data.marincounty.org/resource/mw3d-ud6d.json";
+https.get(url, res => {
+  res.setEncoding("utf8");
+  let body = "";
+  res.on("data", data => {
+    body += data;
+  });
+  res.on("end", () => {
+    body = JSON.parse(body);
+    console.log("Api Called");
+  });
+});
+
+}
+callApi();
