@@ -34,10 +34,14 @@ function callApi() {
 	    // console.log(body);
 	    body.forEach(function (e){
 	    	data = {};
-	    	data.amount = e.amount
 	    	data.department = e.department
+	    	data.amount = parseInt(e.amount)  	
 	    	data.month_and_year = e.month_and_year
-	    	console.log(data);
+
+	    	data_values = new Array();
+	    	for (var key in data)
+	    		data_values.push(data[key]);
+	    	console.log(data_values);
 	    });
 	  });
 	});
