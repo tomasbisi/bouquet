@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+</head>
+<body>
+	<style>
+	body {
+		background-color: #eee;
+	}
+	.container > div {
+		padding: 2em;
+	}
+	.storageChart  {
+		padding-right: 2em;
+		background-color: #fff;
+		width: 700px;
+		margin-left: 20%;
+		margin-top: 3%;
+	}
+	.lowerCharts {
+		display: flex;
+	}
+	.lowerCharts > div {
+		padding-right: 2em;
+		padding-left: 1em;
+		padding-top: 1em;
+		padding-bottom: 2em;
+		background-color: #fff;
+	}
+	.numChart {
+		margin-left: 18.5%;
+		margin-right: 5.7%;
+	}
+	</style>
+
+	<div class="container">
+		<div class="storageChart">
+			<canvas id="storageUtilChart" width="700" height="250"></canvas>
+		</div>
+		<div class="lowerCharts">
+			<div class="numChart" style="width: 300px;">
+				<canvas id="numOfObjectsChart" width="300" height="250;"></canvas>
+			</div>
+			<div class="incChart" style="width: 300px;">
+				<canvas id="incBytesChart" width="300" height="250"></canvas>
+			</div>
+		</div>
+	</div>
+	<script src=script.js></script>
+</body>
+</html>
