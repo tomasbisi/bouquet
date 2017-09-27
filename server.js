@@ -31,9 +31,17 @@ function callApi() {
 	  res.on("end", () => {
 	    body = JSON.parse(body);
 	    console.log("Api Called");
-	    console.log(body);
+	    // console.log(body);
+	    body.forEach(function (e){
+	    	data = {};
+	    	data.amount = e.amount
+	    	data.department = e.department
+	    	data.month_and_year = e.month_and_year
+	    	console.log(data);
+	    });
 	  });
 	});
 
 }
 callApi();
+

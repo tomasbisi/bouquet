@@ -1,3 +1,16 @@
+
+$.getJSON("https://data.marincounty.org/resource/mw3d-ud6d.json", function(result){
+        new_data = [];
+        result.forEach(function (e){    
+            data = {};
+            data.amount = e.amount
+            data.department = e.department
+            data.month_and_year = e.month_and_year
+            new_data.push(data);            
+        });
+        console.log(new_data);
+});
+
 Highcharts.chart('container', {
     chart: {
         type: 'column'
@@ -32,28 +45,29 @@ Highcharts.chart('container', {
     },
     series: [{
         name: 'Population',
-        data: [
-            ['Shanghai', 23.7],
-            ['Lagos', 16.1],
-            ['Istanbul', 14.2],
-            ['Karachi', 14.0],
-            ['Mumbai', 12.5],
-            ['Moscow', 12.1],
-            ['São Paulo', 11.8],
-            ['Beijing', 11.7],
-            ['Guangzhou', 11.1],
-            ['Delhi', 11.1],
-            ['Shenzhen', 10.5],
-            ['Seoul', 10.4],
-            ['Jakarta', 10.0],
-            ['Kinshasa', 9.3],
-            ['Tianjin', 9.3],
-            ['Tokyo', 9.0],
-            ['Cairo', 8.9],
-            ['Dhaka', 8.9],
-            ['Mexico City', 8.9],
-            ['Lima', 8.9]
-        ],
+        // data: parameters,
+        // data: [
+        //     ['Shanghai', 23.7],
+        //     ['Lagos', 16.1],
+        //     ['Istanbul', 14.2],
+        //     ['Karachi', 14.0],
+        //     ['Mumbai', 12.5],
+        //     ['Moscow', 12.1],
+        //     ['São Paulo', 11.8],
+        //     ['Beijing', 11.7],
+        //     ['Guangzhou', 11.1],
+        //     ['Delhi', 11.1],
+        //     ['Shenzhen', 10.5],
+        //     ['Seoul', 10.4],
+        //     ['Jakarta', 10.0],
+        //     ['Kinshasa', 9.3],
+        //     ['Tianjin', 9.3],
+        //     ['Tokyo', 9.0],
+        //     ['Cairo', 8.9],
+        //     ['Dhaka', 8.9],
+        //     ['Mexico City', 8.9],
+        //     ['Lima', 8.9]
+        // ],
         dataLabels: {
             enabled: true,
             rotation: -90,
