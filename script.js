@@ -1,5 +1,3 @@
-// var paramDates = include('./index.html');
-
 function ChartBuild (time){
     $.getJSON("https://data.marincounty.org/resource/mw3d-ud6d.json", function(result){
             new_data = [];
@@ -9,9 +7,7 @@ function ChartBuild (time){
                     data = {};
                     data.department = e.department
                     data.amount = parseInt(e.amount);
-                    // data.month_and_year = e.month_and_year
                     data.month_and_year = new Date(e.month_and_year).getTime(),
-                    // newDates = data.filter(data.month_and_year == 1503878400000);
                     data_values = new Array();
                     for (var key in data)
                         data_values.push(data[key]);
