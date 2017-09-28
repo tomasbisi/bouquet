@@ -1,43 +1,24 @@
-// function saveDateTimes (){
-//         var temp = document.getElementById('date').value;
-//         var paramDate = new Date(temp).getTime();
-//         // ChartBuild(paramDate);
-//         // dateArr.push(paramDate);
-//         // console.log(paramDate);
-//         return paramDate;
-        
-//     }
-
-function ChartBuild (){
-            console.log("inside");
+function ChartBuild (time){
     $.getJSON("https://data.marincounty.org/resource/mw3d-ud6d.json", function(result){
-            clean_data = []; // Clean json with Amount, departments and Date
-            dated_data = []; // Filtered data with the input date.
+            new_data = [];
+            new_clean = [];
            
                 result.forEach(function (e){    
                     data = {};
                     data.department = e.department
-                    data.amount = parseInt(e.amount, 10);
+                    data.amount = parseInt(e.amount);
                     data.month_and_year = new Date(e.month_and_year).getTime(),
                     data_values = new Array();
                     for (var key in data)
                         data_values.push(data[key]);
-                        clean_data.push(data_values);
+                        new_data.push(data_values);
                 });
 
-            var temp = document.getElementById('date').value; // on submit save value
-            var paramDate = new Date(temp).getTime(); // epoch time date convert
-            console.log("test");
-            console.log(paramDate);
-            console.log("end-test");
-            dated_data = clean_data.filter(data => data[2] == 1467356400000); // filter through date parameters
-            
+            new_clean = new_data.filter(data => data[2] == 1467356400000);
+            console.log(new_clean);
+            console.log(new_data);
 
-            console.log(dated_data);
-            console.log(clean_data);
-            
 
-// Chart Build Code
         Highcharts.chart('container', {
             chart: {
                 type: 'column'
@@ -72,7 +53,7 @@ function ChartBuild (){
             },
             series: [{
                 name: 'Population',
-                data: dated_data,
+                data: new_clean,
                 dataLabels: {
                     enabled: true,
                     rotation: -90,
