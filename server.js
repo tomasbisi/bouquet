@@ -21,7 +21,9 @@ app.get('/', function(req, res) {
 app.listen(8080);
 console.log("Listening on Port 8080");
 
-function callApi() {
+
+// Query API in the Backend for Testing Data.
+function apiQuery() {
 	const url = "https://data.marincounty.org/resource/mw3d-ud6d.json";
 	https.get(url, res => {
 	  res.setEncoding("utf8");
@@ -31,14 +33,12 @@ function callApi() {
 	  });
 	  res.on("end", () => {
 	    body = JSON.parse(body);
-	    console.log("Api Called");
-	    // console.log(body);
+	    console.log("Api Called");	    
 	    body.forEach(function (e){
 	    	data = {};
 	    	data.department = e.department
 	    	data.amount = parseInt(e.amount)  	
-	    	// data.month_and_year = e.month_and_year
-			data.month_and_year = new Date(e.month_and_year).getTime(),                    
+	    	data.month_and_year = e.month_and_year			
 	    	data_values = new Array();
 	    	for (var key in data)
 	    		data_values.push(data[key]);
@@ -48,5 +48,4 @@ function callApi() {
 	});
 
 }
-callApi();
-
+apiQuery();
