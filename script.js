@@ -19,9 +19,9 @@ function ChartBuild (){
             var temp = document.getElementById('date').value; // on submit save value.
             temp = temp + 'T00:00:00';
             var paramDate = new Date(temp).getTime(); // epoch time date convert.
-            console.log("test");
-            console.log(paramDate);
-            console.log("end-test");
+            // console.log("test");
+            // console.log(paramDate);
+            // console.log("end-test");
             dated_data = clean_data.filter(data => data[2] == paramDate); // filter through date parameters.
             
 
