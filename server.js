@@ -3,49 +3,10 @@ var https = require('https');
 var app = express();
 var path = require('path');
 
+app.set('port', (process.env.PORT || 5000));
 
-// Express Routes
-app.get('/script.js',function(req,res){
-    res.sendFile(path.join(__dirname + '/script.js'));
+app.use(express.static(__dirname + '/public'));
+
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });
-
-app.get('/index.html', function(req, res) {
-    res.sendFile(path.join(__dirname + '/index.html'));
-});
-
-app.get('/', function(req, res) {
-    res.redirect('/index.html');
-});
-
-
-app.listen(8080);
-console.log("Listening on Port 8080");
-
-
-// Query API in the Backend for Testing Data.
-function apiQuery() {
-	const url = "https://data.marincounty.org/resource/mw3d-ud6d.json";
-	https.get(url, res => {
-	  res.setEncoding("utf8");
-	  let body = "";
-	  res.on("data", data => {
-	    body += data;
-	  });
-	  res.on("end", () => {
-	    body = JSON.parse(body);
-	    console.log("Api Called");	    
-	    body.forEach(function (e){
-	    	data = {};
-	    	data.department = e.department
-	    	data.amount = parseInt(e.amount)  	
-	    	data.month_and_year = e.month_and_year			
-	    	data_values = new Array();
-	    	for (var key in data)
-	    		data_values.push(data[key]);
-	    	console.log(data_values);
-	    });
-	  });
-	});
-
-}
-apiQuery();
