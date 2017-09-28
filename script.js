@@ -36,7 +36,7 @@ function ChartBuild (){
             function dataFix(){
                 
                     for (var i = 0; i < dated_data.length; i++){
-                        if (dated_data[i][0] in dict) {
+                        if (dated_data[i][0] in dictionary) {
                             dictionary[dated_data[i][0]] += dated_data[i][1];
                         } else {
                             dictionary[dated_data[i][0]] = dated_data[i][1];
