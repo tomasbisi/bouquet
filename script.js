@@ -1,12 +1,3 @@
-// function saveDateTimes (){
-//         var temp = document.getElementById('date').value;
-//         var paramDate = new Date(temp).getTime();
-//         // ChartBuild(paramDate);
-//         // dateArr.push(paramDate);
-//         // console.log(paramDate);
-//         return paramDate;
-        
-//     }
 
 function ChartBuild (){
             console.log("inside");
@@ -26,6 +17,7 @@ function ChartBuild (){
                 });
 
             var temp = document.getElementById('date').value; // on submit save value.
+            temp = temp + 'T00:00:00';
             var paramDate = new Date(temp).getTime(); // epoch time date convert.
             console.log("test");
             console.log(paramDate);
@@ -72,7 +64,7 @@ function ChartBuild (){
             },
             series: [{
                 name: 'Population',
-                data: dated_data,
+                data: dated_data, // Data parsed from API call filtered by date
                 dataLabels: {
                     enabled: true,
                     rotation: -90,
