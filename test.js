@@ -14,7 +14,7 @@ function ChartBuild (time){
                         new_data.push(data_values);
                 });
 
-            new_clean = new_data.filter(data => data[2] == 1467356400000);
+            new_clean = new_data.filter(data => data[2] == 1496275200000);
             console.log(new_clean);
             console.log(new_data);
 

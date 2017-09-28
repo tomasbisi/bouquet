@@ -11,13 +11,13 @@
 function ChartBuild (){
             console.log("inside");
     $.getJSON("https://data.marincounty.org/resource/mw3d-ud6d.json", function(result){
-            clean_data = []; // Clean json with Amount, departments and Date
+            clean_data = []; // Clean json with Amount, departments and Date. 
             dated_data = []; // Filtered data with the input date.
            
                 result.forEach(function (e){    
                     data = {};
                     data.department = e.department
-                    data.amount = parseInt(e.amount, 10);
+                    data.amount = parseInt(e.amount, 10); // convert from string to integer.
                     data.month_and_year = new Date(e.month_and_year).getTime(),
                     data_values = new Array();
                     for (var key in data)
@@ -25,12 +25,12 @@ function ChartBuild (){
                         clean_data.push(data_values);
                 });
 
-            var temp = document.getElementById('date').value; // on submit save value
-            var paramDate = new Date(temp).getTime(); // epoch time date convert
+            var temp = document.getElementById('date').value; // on submit save value.
+            var paramDate = new Date(temp).getTime(); // epoch time date convert.
             console.log("test");
             console.log(paramDate);
             console.log("end-test");
-            dated_data = clean_data.filter(data => data[2] == 1467356400000); // filter through date parameters
+            dated_data = clean_data.filter(data => data[2] == paramDate); // filter through date parameters.
             
 
             console.log(dated_data);
@@ -61,7 +61,7 @@ function ChartBuild (){
             yAxis: {
                 min: 0,
                 title: {
-                    text: 'Amount'
+                    text: 'Total Amount ($)'
                 }
             },
             legend: {
