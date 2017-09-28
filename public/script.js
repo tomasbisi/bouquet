@@ -86,7 +86,7 @@ function ChartBuild (){
                 enabled: false
             },
             tooltip: {
-                pointFormat: 'Amount $: <b>{point.y:.0f}</b>'
+                pointFormat: 'Amount $: <b>{point.y:,.0f}</b>'
             },
             series: [{
                 name: 'Population',
@@ -96,7 +96,7 @@ function ChartBuild (){
                     rotation: -90,
                     color: '#FFFFFF',
                     align: 'right',
-                    format: '{point.y:.0f}', // one decimal
+                    format: '{point.y:,.0f}', // one decimal
                     y: 10, // 10 pixels down from the top
                     style: {
                         fontSize: '13px',
